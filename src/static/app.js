@@ -56,31 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         option.textContent = name;
         activitySelect.appendChild(option);
       });
-
-      // Añadir estilos para la sección de participantes
-      if (!document.getElementById("participants-style")) {
-        const style = document.createElement("style");
-        style.id = "participants-style";
-        style.textContent = `
-          .participants-section {
-            margin-top: 10px;
-            padding: 8px;
-            background: #f8f9fa;
-            border-radius: 6px;
-          }
-          .participants-list {
-            margin: 6px 0 0 18px;
-            padding: 0;
-            color: #333;
-          }
-          .no-participants {
-            color: #888;
-            margin: 4px 0 0 0;
-            font-style: italic;
-          }
-        `;
-        document.head.appendChild(style);
-      }
     } catch (error) {
       activitiesList.innerHTML = "<p>Failed to load activities. Please try again later.</p>";
       console.error("Error fetching activities:", error);
